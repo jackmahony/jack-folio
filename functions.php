@@ -1,14 +1,33 @@
 <?php
 
+// Add options page (ACF Controller)
+if( function_exists('acf_add_options_page') ) {
+	acf_add_options_page();
+}
+
+if ( ! class_exists( 'Timber' ) ) {
+	add_action( 'admin_notices', function() {
+			echo '<div class="error"><p>Timber not activated. Make sure you activate the plugin in <a href="' . esc_url( admin_url( 'plugins.php#timber' ) ) . '">' . esc_url( admin_url( 'plugins.php' ) ) . '</a></p></div>';
+		} );
+	return;
+}
+
+// Allow SVGs
+function cc_mime_types($mimes) {
+  $mimes['svg'] = 'image/svg+xml';
+  return $mimes;
+}
+add_filter('upload_mimes', 'cc_mime_types');
+
 if ( ! class_exists( 'Timber' ) ) {
 	add_action( 'admin_notices', function() {
 		echo '<div class="error"><p>Timber not activated. Make sure you activate the plugin in <a href="' . esc_url( admin_url( 'plugins.php#timber' ) ) . '">' . esc_url( admin_url( 'plugins.php') ) . '</a></p></div>';
 	});
-	
+
 	add_filter('template_include', function($template) {
 		return get_stylesheet_directory() . '/static/no-timber.html';
 	});
-	
+
 	return;
 }
 
@@ -29,20 +48,33 @@ class StarterSite extends TimberSite {
 	}
 
 	function register_post_types() {
-		//this is where you can register custom post types
+		register_post_type( 'project',
+      // CPT Options
+      array(
+        'labels' => array(
+        'name' => __( 'Projects' ),
+        'singular_name' => __( 'Project' )
+      ),
+        'menu_icon' => 'dashicons-megaphone',
+        'supports' => array( 'title', 'editor', 'thumbnail' ),
+        'public' => true,
+        'has_archive' => false,
+        'rewrite' => array('slug' => 'project'),
+      )
+    );
 	}
 
 	function register_taxonomies() {
 		//this is where you can register custom taxonomies
 	}
 
-	function add_to_context( $context ) {
-		$context['foo'] = 'bar';
-		$context['stuff'] = 'I am a value set in your functions.php file';
-		$context['notes'] = 'These values are available everytime you call Timber::get_context();';
-		$context['menu'] = new TimberMenu();
-		$context['site'] = $this;
-		return $context;
+	function add_to_context( $data ) {
+		$data['menu'] = new TimberMenu('main');
+    $data['topnav'] = new TimberMenu('2');
+    $data['footernav'] = new TimberMenu('3');
+    $data['options'] = get_fields('option');
+    $data['projects'] = Timber::get_posts('post_type=project');
+		return $data;
 	}
 
 	function myfoo( $text ) {

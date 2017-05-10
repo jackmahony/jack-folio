@@ -49,3 +49,8 @@
     {% endblock %}
 
       -# Scripts
+      %scripts
+        -# Foundation
+        %script{src: "{{theme.link}}/bower_components/foundation-sites/dist/js/foundation.min.js"}
+        :javascript
+          $(document).foundation();
