@@ -1,6 +1,52 @@
+// Navigtion
+nav#topnav
+  background-color: #f9b
 
-body
+  .navigation
+    display: inline-block
 
+    li
+      background-color: #fff
+      text-decoration: none
+
+
+// Globals
+.secondary
+  background-color: #292929
+
+// Button styles
+.button
+  display: block
+  margin-left: auto
+  margin-right: auto
+  margin-top: 1rem
+  width: 125px
+  height: 50px
+  margin-bottom: 0
+  background-color: transparent
+  border: #fff 2px solid
+  border-radius: 15px
+
+  a
+    color: #fff
+    font-size: 18px
+
+  +breakpoint(medium)
+    margin-left: 0.5rem
+    margin-top: 0
+    margin-right: 0.5rem
+    display: inline-block
+    border: none
+
+    a
+      font-size: 24px
+
+    &:hover
+      border-top: 1px solid
+      border-bottom: 1px solid
+      border-radius: 0
+
+// Homepage styles
 section#home
   background-image: url('../../assets/img/home-hero2.jpg')
   height: 100vh
@@ -12,19 +58,63 @@ section#home
     background-image: url('../../assets/img/home-hero.jpg')
     background-size: 100%
 
-  .content
-    padding-top: 100px
+// ABOUT PAGE STYLES
+section#introduction
+  position: relative
+  z-index: 1
+  margin: 0
+  padding-bottom: 75px
+  padding-top: 75px
 
-    h1
+  p
+    color: #fff
 
-  // .menu
-  //   position: relative
-  //   text-align: center
-  //
-  //   li
-  //     display: inline-block
-  //
-  //     a
-  //       padding: 1rem
-  //       color: #fff
-  //       border: 1px solid
+section#IndustrialDesign
+  position: relative
+  margin: 0
+  padding-bottom: 75px
+  padding-top: 75px
+
+  p,h2
+    +breakpoint(medium)
+      text-align: left
+
+section#FrontEndDevelopment
+  position: relative
+  margin: 0
+  padding-bottom: 75px
+  padding-top: 75px
+
+  p,h2
+    color: #fff
+    +breakpoint(medium)
+      text-align: left
+
+section#BusinessDevelopment
+  position: relative
+  margin: 0
+  padding-bottom: 75px
+  padding-top: 75px
+
+  p,h2
+    +breakpoint(medium)
+      text-align: left
+
+//PORTFOLIO HOME PAGE STYLES
+section#PortfolioHeader
+  position: relative
+  margin: 0
+  padding-bottom: 75px
+  padding-top: 75px
+
+section#ProjectThumbnails
+  position: relative
+  margin: 0
+  padding-bottom: 75px
+  padding-top: 75px
+  
+  .projectthumbnail
+    background-color: #f9b
+
+    p
+      text-align: left

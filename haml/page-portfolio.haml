@@ -1,0 +1,24 @@
+{% extends "base.twig" %}
+
+{% block content %}
+{% include 'particles/navigation.twig' %}
+
+%section#PortfolioHeader.secondary
+  .row
+    .medium-centered.medium-8.columns
+      {% if post.portfolio_header %}
+        %h1 {{post.portfolio_header}}
+      {% endif %}
+
+%section#ProjectThumbnails
+  .row.medium-up-2
+    {% for project in post.get_field('project_thumbnail') %}
+      .column
+        .projectthumbnail
+          %img{src: "{{TimberImage(project.project_image)|resize(280, 233) }}"}
+          %h3 {{project.project_title}}
+          %p {{project.company_name}}</h6>
+
+    {% endfor %}
+
+{% endblock %}

@@ -91,4 +91,13 @@ class StarterSite extends TimberSite {
 
 }
 
+// Call the google CDN version of jQuery for the frontend
+// Make sure you use this with wp_enqueue_script('jquery'); in your header
+function wpfme_jquery_enqueue() {
+	wp_deregister_script('jquery');
+	wp_register_script('jquery', "http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js", false, null);
+	wp_enqueue_script('jquery');
+}
+if (!is_admin()) add_action("wp_enqueue_scripts", "wpfme_jquery_enqueue", 11);
+
 new StarterSite();
