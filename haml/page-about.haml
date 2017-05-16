@@ -3,48 +3,45 @@
 {% block content %}
 {% include 'particles/navigation.twig' %}
 
-%section#introduction.secondary
-  .row
-    .medium-8.medium-centered.columns
+%section#Introduction.secondary
+  .row.align-center
+    .small-12.medium-8.columns
       {% if post.header %}
         %p {{post.header}}
       {% endif %}
 
 %section#IndustrialDesign
   .row
-    .medium-5.medium-offset-1.columns
+    .small-12.medium-5.medium-offset-1.columns
       {% if post.industrial_image %}
         %img{src: "{{TimberImage(post.industrial_image)}}"}
       {% endif %}
 
-    .medium-5.medium-pull-1.columns
+    .small-12.medium-5.medium-pull-1.columns
       {% if post.industrial_designer %}
         %p {{post.industrial_designer }}
       {% endif %}
 
 %section#FrontEndDevelopment.secondary
   .row
-    .medium-5.medium-offset-1.columns
+    .small-12.medium-5.medium-offset-1.columns
       {% if post.front_end_development %}
         %p {{post.front_end_development }}
       {% endif %}
-    .medium-5.medium-pull-1.columns
+    .small-12.medium-5.medium-pull-1.columns
       {% if post.front_end_image %}
         %img{src: "{{TimberImage(post.front_end_image)}}"}
       {% endif %}
 
 %section#BusinessDevelopment
   .row
-    .medium-5.medium-offset-1.columns
+    .small-12.medium-5.medium-offset-1.columns
       {% if post.business_image %}
         %img{src: "{{TimberImage(post.business_image)}}"}
       {% endif %}
-    .medium-5.medium-pull-1.columns
+    .small-12.medium-5.medium-pull-1.columns
       {% if post.business_development %}
         %p {{post.business_development  }}
       {% endif %}
-
-
-
 
 {% endblock %}

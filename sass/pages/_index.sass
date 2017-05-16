@@ -1,18 +1,38 @@
 // Navigtion
 nav#topnav
-  background-color: #f9b
+  background-color: #292929
+  padding-top: 1rem
+  padding-bottom: 1rem
+
+  li.button.current_page_item a
+    color: #00E7DC
+
+  span
+    font-size: 20px
+    display: inline-block
+    color: #fff
 
   .navigation
-    display: inline-block
+    display: block
 
     li
-      background-color: #fff
-      text-decoration: none
-
+      display: inline-block
+      a
+        font-size: 18px
 
 // Globals
 .secondary
   background-color: #292929
+
+
+.columns
+  padding-left: 25px
+  padding-right: 25px
+
+  +breakpoint(medium)
+    padding-left: 15px
+    padding-right: 15px
+
 
 // Button styles
 .button
@@ -24,6 +44,7 @@ nav#topnav
   height: 50px
   margin-bottom: 0
   background-color: transparent
+  background: none
   border: #fff 2px solid
   border-radius: 15px
 
@@ -39,11 +60,12 @@ nav#topnav
     border: none
 
     a
-      font-size: 24px
+      font-size: 20px
 
     &:hover
       border-top: 1px solid
       border-bottom: 1px solid
+      border-color: #00E7DC
       border-radius: 0
 
 // Homepage styles
@@ -53,13 +75,37 @@ section#home
   background-size: 100%
   background-repeat: no-repeat
 
+  h1
+    padding: 0
 
   +breakpoint(medium)
     background-image: url('../../assets/img/home-hero.jpg')
     background-size: 100%
 
+    h1
+      text-align: left
+
+  .title
+    padding-top: 1rem
+    position: relative
+    +breakpoint(medium)
+      padding-top: 200px
+
+    .logo
+      display: block
+      +breakpoint(medium)
+        float: right
+      svg
+        display: block
+        margin-left: auto
+        margin-right: auto
+  .menu
+    position: relative
+    padding-top: 1rem
+    text-align: center
+
 // ABOUT PAGE STYLES
-section#introduction
+section#Introduction
   position: relative
   z-index: 1
   margin: 0
@@ -112,9 +158,20 @@ section#ProjectThumbnails
   margin: 0
   padding-bottom: 75px
   padding-top: 75px
-  
+
   .projectthumbnail
     background-color: #f9b
+    width: 100%
+    height: auto
 
     p
       text-align: left
+
+// PROJECT GLOBALS
+section#ProjectIntroduction
+  margin-top: -86px
+  padding-top: 161px
+  padding-bottom: 75px
+
+  h2,p
+    color: #fff

@@ -2,13 +2,10 @@
 
 {% block content %}
 
-
 %section#home
-
-  .content
-    .row.align-middle{data-equalizer: "content", data-equalize-on: "medium"}
-      .medium-5.columns{data-equalizer-watch: "content"}
-
+  .title
+    .row.align-middle
+      .small-12.medium-5.columns
         .logo
           <svg width="156px" height="195px" viewBox="0 0 156 195" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
               <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
@@ -23,12 +20,13 @@
                   </g>
               </g>
           </svg>
-      .medium-7.columns{data-equalizer-watch: "content"}
+      .small-12.medium-7.columns
         %h1.name Jack Mahony
         %h1.proffesion UX Designer
+
   .menu
-    .row
-      .medium-8.medium-centered.columns
+    .row.align-center
+      .medium-8.columns
         {% for item in menu.get_items %}
           .button
             %li{class: "{{item.classes | join(' ')}}"}

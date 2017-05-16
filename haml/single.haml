@@ -1,0 +1,319 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+{% include 'particles/navigation.twig' %}
+
+-# GLOBAL HEADER FOR PROJECTS
+%section#ProjectIntroduction{style: "background: url('{{ TimberImage(post.header_image)}}')center;"}
+  .row.align-center
+    .small-12.medium-8.columns
+      {% if post.title %}
+        %h2 {{post.title}}
+      {% endif %}
+      {% if post.about %}
+        %p {{post.about}}
+      {% endif %}
+
+-# INDIVIDUAL PROJECTS START HERE
+-# GENERAL ASSEMBLY UX PROJECT
+%section#ResearchPlan
+  .row.align-center
+    .medium-12.columns
+      {% if post.research %}
+        %h2 {{post.research}}
+      {% endif %}
+      {% for item in post.get_field('research_areas') %}
+        .research
+            %h3 {{item.title}}
+            %p {{item.about}}
+      {% endfor %}
+
+%section#GenerativeData.secondary
+  .row.align-center
+    .small-12.medium-6.columns
+      {% if post.gdata %}
+        %p {{post.gdata}}
+      {% endif %}
+  .row.align-center
+    .small-12.medium-8.columns
+      {% if post.gdata2 %}
+        %p {{post.gdata2}}
+      {% endif %}
+
+-#SECTION STILL TO BE DESIGNED
+%section#ResearchApproach
+  %br
+  %br
+
+%section#CompetitorAnalysis.secondary
+  .row
+    .small-12.medium-4.columns
+      {% if post.competitor_analysis_title %}
+        %h2 {{post.competitor_analysis_title}}
+      {% endif %}
+      {% if post.competitor_analysis_text %}
+        %p {{post.competitor_analysis_text}}
+      {% endif %}
+    .small-12.medium-8.columns
+      {% for image in post.get_field('competitor_logos') %}
+        %img{src:"{{ TimberImage(image)|resize(200, 200) }}"}
+      {% endfor %}
+  .row
+    .medium-12.columns
+      {% if post.screen_captures_title %}
+        %h2 {{post.screen_captures_title}}
+      {% endif %}
+      {% for image in post.get_field('screen_captures_images') %}
+        %img{src:"{{ TimberImage(image) }}"}
+      {% endfor %}
+
+%section#AffinityMapping
+  .row.align-center
+    .small-12.medium-8.columns
+      {% if post.affinity_mapping_title %}
+        %h2 {{post.affinity_mapping_title}}
+      {% endif %}
+      {% if post.affinity_mapping_text %}
+        %p {{post.affinity_mapping_text}}
+      {% endif %}
+  .row
+    .medium-12.columns
+      {% if post.affinity_map_image %}
+        %img{src:"{{ TimberImage(post.affinity_map_image) }}"}
+      {% endif %}
+      {% for image in post.get_field('affinity_map_stickys') %}
+        %img{src:"{{ TimberImage(image) }}"}
+      {% endfor %}
+
+%section#DevelopingUserPersonas.secondary
+  .row.align-center
+    .small-12.medium-8.columns
+      {% if post.user_personas_title %}
+        %h2 {{post.user_personas_title}}
+      {% endif %}
+      {% if post.user_personas_text %}
+        %p {{post.user_personas_text}}
+      {% endif %}
+
+  .row
+    .medium-12.columns
+      {% if post.user_persona_image %}
+        %img{src:"{{ TimberImage(post.user_persona_image) }}"}
+      {% endif %}
+
+  .row
+    .small-12.medium-6.columns
+      {% if post.defining_the_problem %}
+        %p {{post.defining_the_problem}}
+      {% endif %}
+    .small-12.medium-6.columns
+      {% if post.how_can_we_improve_this %}
+        %p {{post.how_can_we_improve_this}}
+      {% endif %}
+
+%section#StoryBoards
+  .row.align-right
+    .small-12.medium-8.columns
+      {% if post.story_board_image %}
+        %img{src:"{{ TimberImage(post.story_board_image) }}"}
+      {% endif %}
+
+  .row.align-left
+    .small-12.medium-8.columns
+      {% if post.story_board_image2 %}
+        %img{src:"{{ TimberImage(post.story_board_image2) }}"}
+      {% endif %}
+
+  .row.align-center
+    .medium-8.columns
+      {% if post.feature_prioritisation %}
+        %p {{post.feature_prioritisation}}
+      {% endif %}
+
+  .row.align-center
+    .small-12.medium-10.columns
+      {% if post.feature_prioritisation_image %}
+        %img{src:"{{ TimberImage(post.feature_prioritisation_image) }}"}
+      {% endif %}
+
+  .row.align-center
+    .medium-12.columns
+      {% if post.user_flow_title %}
+        %h2 {{post.user_flow_title}}
+      {% endif %}
+      {% if post.user_flow_image %}
+        %img{src:"{{ TimberImage(post.user_flow_image) }}"}
+      {% endif %}
+
+%section#PaperPrototype.secondary
+  .row.align-center
+    .small-12.medium-8.columns
+      {% if post.test_title %}
+        %h2 {{post.test_title}}
+      {% endif %}
+      {% if post.test_text %}
+        %p {{post.test_text}}
+      {% endif %}
+
+  .row.small-up-1.medium-up-2
+    {% for image in post.get_field('paper_prototypes') %}
+      .column
+        %img{src:"{{ TimberImage(image) }}"}
+    {% endfor %}
+
+%section#FeaturePrioritisation
+  .row.align-center
+    .small-12.medium-8.columns
+      {% if post.feature_title %}
+        %h2 {{post.feature_title}}
+      {% endif %}
+      {% if post.feature_text %}
+        %p {{post.feature_text}}
+      {% endif %}
+
+%section#CalendarFeature.secondary
+  .row
+    .medium-12.columns
+      {% if post.calendar_feature %}
+        %h2 {{calendar_feature}}
+      {% endif %}
+      {% if post.calendar_image %}
+        %img{src:"{{ TimberImage(post.calendar_image) }}"}
+      {% endif %}
+
+%section#PivotingDirection
+  .row
+    .small-12.medium-6.columns
+      {% if post.pivot_image %}
+        %img{src:"{{ TimberImage(post.pivot_image ) }}"}
+      {% endif %}
+    .small-12.medium-6.columns
+      {% if post.pivot_text %}
+        %p {{post.pivot_text}}
+      {% endif %}
+  .row
+    .small-12.medium-6.columns
+      {% if post.altering_problem_text %}
+        %p {{post.altering_problem_text}}
+      {% endif %}
+    .small-12.medium-6.columns
+      {% if post.altering_problem_image %}
+        %img{src:"{{ TimberImage(post.altering_problem_image ) }}"}
+      {% endif %}
+
+%section#PersonaScenarios.secondary
+  .row.Chelsea
+    .small-12.medium-6.columns
+      {% if post.chelsea_persona_title %}
+        %h2 {{post.chelsea_persona_title}}
+      {% endif %}
+      {% if post.chelsea_persona_text %}
+        %p {{post.chelsea_persona_text}}
+      {% endif %}
+    .small-12.medium-6.columns
+      {% for image in post.get_field('chelsea_persona_images') %}
+        %img{src:"{{ TimberImage(image) }}" }
+      {% endfor %}
+
+  .row.Steve
+    .small-12.medium-6.columns
+      {% for image in post.get_field('steve_persona_images') %}
+        %img{src:"{{ TimberImage(image) }}" }
+      {% endfor %}
+    .small-12.medium-6.columns
+      {% if post.steve_persona_title %}
+        %h2 {{post.steve_persona_title}}
+      {% endif %}
+      {% if post.steve_persona_text %}
+        %p {{post.steve_persona_text}}
+      {% endif %}
+  .row.align-center
+    .small-12.medium-8.columns
+      {% if post.quote %}
+        %h3 {{post.quote}}
+      {% endif %}
+
+%section#OpenCardSorting
+  .row.align-center
+    .small-12.medium-8
+      {% if post.open_card_sorting %}
+        %p {{post.open_card_sorting}}
+      {% endif %}
+
+  .row
+    .medium-12.columns
+      {% for image in post.get_field('open_card_images') %}
+        %img{src:"{{ TimberImage(image) }}" }
+      {% endfor %}
+
+  .row.align-center
+    .small-12.medium-8.columns
+      {% if post.proposed_sitemap %}
+        %h2 {{post.proposed_sitemap }}
+      {% endif %}
+
+  .sitemap
+    {% if post.sitemap_image %}
+      %img{src:"{{ TimberImage(post.sitemap_image) }}" }
+    {% endif %}
+
+%section#ChosenTechnology.secondary
+  .row
+    .small-12.medium-6.columns
+      {% if post.what_tech %}
+        %p {{post.what_tech }}
+      {% endif %}
+    .small-12.medium-6.columns
+        IMAGE TO COME!
+
+%section#DevelopingWireframes
+  .row
+    .small-12.medium-6.columns
+        IMAGE TO COME!
+    .small-12.medium-6.columns
+      {% if post.developing_wireframes %}
+        %p {{post.what_tech}}
+      {% endif %}
+
+%section#WireframeScreens.secondary
+  .row
+    .medium-12.columns
+      {% for item in post.get_field('key_screens') %}
+        %h2 {{item.title}}
+        %img{src:"{{TimberImage(item.screen).src}}"}
+      {% endfor %}
+
+  .row.align-center
+    .medium-8.columns
+      {% if post.testing %}
+        %p {{post.testing}}
+      {% endif %}
+
+  .row.small-up-1.medium-up-2
+
+    {% for image in post.get_field('prototype_images') %}
+      .column
+        %img{src:"{{ TimberImage(image) }}" }
+    {% endfor %}
+
+  .row.align-center
+    .small-12.medium-8.columns
+      {% if post.key_design_iterations %}
+        %p {{post.key_design_iterations}}
+      {% endif %}
+
+%section#FinalProduct
+  .row.align-center
+    .small-12.medium-8.columns
+      {% if post.usability_and_testing %}
+        %p {{post.usability_and_testing}}
+      {% endif %}
+
+  .row.align-center
+    .small-12.medium-8.columns
+      {% if post.the_final_product %}
+        %p {{post.the_final_product}}
+      {% endif %}
+
+{% endblock %}
