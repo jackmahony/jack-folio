@@ -1,0 +1,50 @@
+//PORTFOLIO HOME PAGE STYLES
+section#PortfolioHeader
+  position: relative
+  margin: 0
+  padding-bottom: rem-calc(25)
+  padding-top: rem-calc(110)
+  z-index: 1
+
+  +breakpoint(medium)
+    padding-top: rem-calc(125)
+
+    +breakpoint(xxlarge)
+      padding-top: rem-calc(155)
+
+  h1
+    color: #000
+
+
+section#ProjectThumbnails
+  position: relative
+  margin: 0
+  padding-bottom: rem-calc(40)
+  padding-top: 0
+
+  +breakpoint(medium)
+    padding-bottom: rem-calc(75)
+
+  .projectthumbnail
+    background-color: #292929
+    width: rem-calc(280)
+    height: rem-calc(287)
+    display: block
+    margin-left: auto
+    margin-right: auto
+    margin-bottom: 1rem
+
+    +breakpoint(medium)
+      height: rem-calc(295)
+      margin-bottom: 0
+
+    p,h3
+      text-align: left
+      color: #fff
+      padding-left: 1rem
+      margin-bottom: 0
+
+    .foot
+      height: 8px
+      background-color: #F8E81C
+      margin-top: 5px

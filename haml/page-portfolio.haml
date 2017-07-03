@@ -3,21 +3,22 @@
 {% block content %}
 {% include 'particles/navigation.twig' %}
 
-%section#PortfolioHeader.secondary
+
+%section#PortfolioHeader
   .row.align-center
     .medium-8.columns
       {% if post.portfolio_header %}
-        %h1 {{post.portfolio_header}}
+        %h1.mark {{post.portfolio_header}}
       {% endif %}
 
 %section#ProjectThumbnails
-  .row.small-up-1.medium-up-2
+  .row.small-up-1.medium-up-3
     {% for project in projects %}
           .column
-            %a.project{href: "{{project.link}}"}
-              .projectthumbnail
+            .projectthumbnail
+              %a.project{href: "{{project.link}}"}
                 {% if project.project_image %}
-                  %img{src: "{{TimberImage(project.project_image)|resize(280, 233) }}"}
+                  %img{src: "{{TimberImage(project.project_image)|resize(280, 210) }}"}
                 {% endif %}
                 {% if project.project_title %}
                   %h3 {{project.project_title}}
@@ -25,15 +26,9 @@
                 {% if project.company_name %}
                   %p {{project.company_name}}
                 {% endif %}
-        {% endfor %}
+                .foot
+    {% endfor %}
 
-  -# .row.medium-up-2
-  -#   {% for project in post.get_field('project_thumbnail') %}
-  -#     .column
-  -#       .projectthumbnail
-  -#         %img{src: "{{TimberImage(project.project_image)|resize(280, 233) }}"}
-  -#         %h3 {{project.project_title}}
-  -#         %p {{project.company_name}}</h6>
-  -#   {% endfor %}
+{% include 'particles/footer.twig' %}
 
 {% endblock %}

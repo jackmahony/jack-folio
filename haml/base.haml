@@ -27,6 +27,7 @@
 
     -# Head Block
     {% block head %}
+
     {% endblock %}
 
     -# CSS
@@ -44,9 +45,6 @@
 
     -# Footer
     {% block footer %}
-
-    {% endblock %}
-
       -# Scripts
       %scripts
         -# Foundation
@@ -57,4 +55,21 @@
         -# Wowjs
         %script{src: "{{theme.link}}/bower_components/wow/dist/wow.min.js"}
         :javascript
-          new WOW().init();  
+          new WOW().init();
+
+        -# Animate CSS
+        %link{href: "{{theme.link}}/bower_components/animate.css/animate.min.css", media: "screen", rel: "stylesheet", type: "text/css"}
+
+        -#Header
+        %script{src: "https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.3/headroom.js"}
+        %script{src: "https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.3/jQuery.headroom.js"}
+        :javascript
+          // grab an element
+          var myElement = document.querySelector("header");
+          // construct an instance of Headroom, passing the element
+          var headroom  = new Headroom(myElement);
+          // initialise
+          headroom.init();
+
+
+    {% endblock %}

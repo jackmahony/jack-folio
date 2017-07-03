@@ -11,7 +11,7 @@
       {% endif %}
 
 %section#IndustrialDesign
-  .row
+  .row.align-middle
     .small-12.medium-5.medium-offset-1.columns
       {% if post.industrial_image %}
         %img{src: "{{TimberImage(post.industrial_image)}}"}
@@ -23,25 +23,38 @@
       {% endif %}
 
 %section#FrontEndDevelopment.secondary
-  .row
-    .small-12.medium-5.medium-offset-1.columns
+  .row.align-middle
+    .small-12.medium-5.medium-offset-1.columns.wow.fadeInLeft
       {% if post.front_end_development %}
         %p {{post.front_end_development }}
       {% endif %}
-    .small-12.medium-5.medium-pull-1.columns
+    .small-12.medium-5.medium-pull-1.columns.wow.fadeInRight
       {% if post.front_end_image %}
         %img{src: "{{TimberImage(post.front_end_image)}}"}
       {% endif %}
 
 %section#BusinessDevelopment
-  .row
-    .small-12.medium-5.medium-offset-1.columns
+  .row.align-middle
+    .small-12.medium-5.medium-offset-1.columns.wow.fadeInLeft
       {% if post.business_image %}
         %img{src: "{{TimberImage(post.business_image)}}"}
       {% endif %}
-    .small-12.medium-5.medium-pull-1.columns
+    .small-12.medium-5.medium-pull-1.columns.wow.fadeInRight
       {% if post.business_development %}
         %p {{post.business_development  }}
       {% endif %}
+
+%section#General.third
+  .row.align-center
+    .small-12.medium-8.columns.wow.fadeInUp
+      {% if post.general %}
+        %p {{post.general}}
+      {% endif %}
+
+
+{% include 'particles/footer.twig' %}
+
+
+
 
 {% endblock %}

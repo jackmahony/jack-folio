@@ -1,0 +1,38 @@
+<svg width="147px" height="186px" viewBox="0 0 147 186" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 44 (41411) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs>
+      <style>
+
+        #Shape {
+          stroke-dasharray: 800;
+          stroke-dashoffset: 0;
+          -webkit-animation: dash 3.5s linear forwards;
+          -o-animation: dash 3.5s linear forwards;
+          -moz-animation: dash 3.5s linear forwards;
+          animation: dash 3.5s linear forwards;
+        }
+
+        @-webkit-keyframes dash {
+          from {
+            stroke-dashoffset: 800;
+          }
+          to {
+            stroke-dashoffset: 0;
+          }
+        }
+
+
+      </style>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="jm-outline" transform="translate(1.000000, 4.000000)" stroke-width="3" stroke="#FFFFFF">
+            <g id="Shape">
+                <polygon points="14.37 156.92 0.5 156.92 0.5 0.19 66.07 80.02 122.67 15.05 133.13 24.16 65.76 101.48 14.37 38.92"></polygon>
+            </g>
+            <g id="Shape-2" transform="translate(71.000000, 34.000000)">
+                <polygon id="Shape" points="10.14 145.7 0.09 136.14 59.01 74.17 58.42 36.57 11.68 89.96 1.24 80.83 71.73 0.32 72.96 79.62"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,8 +1,19 @@
 {% extends "base.twig" %}
 
 {% block content %}
+-# .wrapper
 {% include 'particles/navigation.twig' %}
+{% if post.slug == 'contact' %}
+  %section#contact
+    .contact-form
+      .row.align-center
+        .small-12.medium-8.columns
+          %h1.mark Send me an email
+          {% filter shortcodes %}
+            [contact-form-7 id="225" title="Contact Me"]
+          {% endfilter %}
+{% endif %}
 
-%p Lorem ipsum...Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+{% include 'particles/footer.twig' %}
 
 {% endblock %}

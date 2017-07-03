@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html><head><meta charset="{{site.charset}}" /><title>{% if wp_title %}{{ wp_title }} - {{ site.name }}{% else %}{{ site.name }}{% endif %}</title><meta content="{{ site.name }}" name="description" /><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" /><meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" /><meta content="width=device-width, initial-scale=1.0" name="viewport" /><link rel="pingback" />{{function('wp_head')}}{% block head %}{% endblock %}<link href="{{theme.link}}/assets/stylesheets/core.css" media="screen" rel="stylesheet" type="text/css" /></head><body class="{{body_class}}" data-template="base.twig">{% block content %}  Sorry, no content{% endblock %}{% block footer %}{% endblock %}<scripts><script src="{{theme.link}}/bower_components/foundation-sites/dist/js/foundation.min.js"></script>
+<html><head><meta charset="{{site.charset}}" /><title>{% if wp_title %}{{ wp_title }} - {{ site.name }}{% else %}{{ site.name }}{% endif %}</title><meta content="{{ site.name }}" name="description" /><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" /><meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" /><meta content="width=device-width, initial-scale=1.0" name="viewport" /><link rel="pingback" />{{function('wp_head')}}{% block head %}{% endblock %}<link href="{{theme.link}}/assets/stylesheets/core.css" media="screen" rel="stylesheet" type="text/css" /></head><body class="{{body_class}}" data-template="base.twig">{% block content %}  Sorry, no content{% endblock %}{% block footer %}<scripts><script src="{{theme.link}}/bower_components/foundation-sites/dist/js/foundation.min.js"></script>
 <script type="text/javascript">
 //<![CDATA[
 
@@ -13,6 +13,28 @@ $(document).foundation();
 //<![CDATA[
 
 new WOW().init();
+
+
 //]]>
 </script>
-</scripts></body></html>
+<link href="{{theme.link}}/bower_components/animate.css/animate.min.css" media="screen" rel="stylesheet" type="text/css" /><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.3/headroom.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.3/jQuery.headroom.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+
+// grab an element
+
+var myElement = document.querySelector("header");
+
+// construct an instance of Headroom, passing the element
+
+var headroom  = new Headroom(myElement);
+
+// initialise
+
+headroom.init();
+
+
+
+//]]>
+</script>
+</scripts>{% endblock %}</body></html>

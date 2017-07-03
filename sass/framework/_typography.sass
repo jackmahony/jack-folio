@@ -1,15 +1,25 @@
 // Import fonts
-@import url(../fonts/Fira+Sans/Josefin+Sans/stylesheet.css)
+@import url(https://fonts.googleapis.com/css?family=Fira+Sans:300,400|Josefin+Sans:300,400)
 
 // Paragraph styles
 p
-  font-size: 16px
+  font-size: 18px
   font-family: 'Fira Sans', sans-serif
-  text-align: center
+  text-align: left
+  font-weight: lighter
+  line-height: 1.4
+
+  +breakpoint(medium)
+    font-size: 20px
+    text-align: left
+
+ul,ol
+  font-size: 18px
+  font-family: 'Fira Sans', sans-serif
   font-weight: lighter
 
   +breakpoint(medium)
-    font-size: 18px
+    font-size: 20px
 
 // Header Styles
 
@@ -17,13 +27,50 @@ h1
   color: #fff
   font-family: 'Josefin Sans', sans-serif
   font-weight: 600
-  text-align: center
+  text-align: left
 
   +breakpoint(medium)
     padding-left: 100px
     padding-right: 100px
+    text-align: center
 
+  &.mark
+    position: relative
+    display: block
+    z-index: 1
+
+    &::after
+      content: url('../../assets/img/mark1.svg')
+      position: relative
+      display: block
+      margin-top: rem-calc(10)
+      margin-bottom: rem-calc(20)
 
 h2
   font-family: 'Josefin Sans', sans-serif
-  text-align: center
+  text-align: left
+  margin-top: rem-calc(10)
+
+  +breakpoint(medium)
+    text-align: center
+
+  &.mark
+    position: relative
+    display: block
+
+    &::after
+      content: url('../../assets/img/mark2.svg')
+      position: relative
+      display: block
+      margin-top: rem-calc(10)
+      margin-bottom: rem-calc(20)
+
+h3
+  font-family: 'Josefin Sans', sans-serif
+  font-weight: 600
+  padding-top: 12px
+  margin-bottom: 0
+  text-align: left
+
+  +breakpoint(medium)
+    text-align: center

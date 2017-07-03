@@ -1,28 +1,46 @@
-// Navigtion
-nav#topnav
-  background-color: #292929
-  padding-top: 1rem
-  padding-bottom: 1rem
-
-  li.button.current_page_item a
-    color: #00E7DC
-
-  span
-    font-size: 20px
-    display: inline-block
-    color: #fff
-
-  .navigation
-    display: block
-
-    li
-      display: inline-block
-      a
-        font-size: 18px
-
 // Globals
+.gap
+  padding-bottom: rem-calc(40)
+
+.style
+  box-shadow: 0 20px 30px 0 rgba(0,0,0,.1)
+  border-radius: 3px
+
+  +breakpoint(medium)
+    padding-bottom: rem-calc(80)
+
+img
+  display: block
+  margin-left: auto
+  margin-right: auto
+  margin-top: 1rem
+
 .secondary
   background-color: #292929
+
+  h1,h2,h3,p,ul,ol
+    color: #fff
+
+.third
+  background-color: #efefef
+
+.pad
+  padding-top: 0
+  padding-bottom: 0
+  background-color: #fff
+
+section
+  padding-top: rem-calc(40)
+  padding-bottom: rem-calc(40)
+  position: relative
+
+  +breakpoint(medium)
+    padding-top: rem-calc(55)
+    padding-bottom: rem-calc(55)
+
+    +breakpoint(xxlarge)
+      padding-top: rem-calc(80)
+      padding-bottom: rem-calc(80)
 
 
 .columns
@@ -32,7 +50,6 @@ nav#topnav
   +breakpoint(medium)
     padding-left: 15px
     padding-right: 15px
-
 
 // Button styles
 .button
@@ -53,7 +70,7 @@ nav#topnav
     font-size: 18px
 
   +breakpoint(medium)
-    margin-left: 0.5rem
+    margin-left: 0.25rem
     margin-top: 0
     margin-right: 0.5rem
     display: inline-block
@@ -67,111 +84,16 @@ nav#topnav
       border-bottom: 1px solid
       border-color: #00E7DC
       border-radius: 0
-
-// Homepage styles
-section#home
-  background-image: url('../../assets/img/home-hero2.jpg')
-  height: 100vh
-  background-size: 100%
-  background-repeat: no-repeat
-
-  h1
-    padding: 0
-
-  +breakpoint(medium)
-    background-image: url('../../assets/img/home-hero.jpg')
-    background-size: 100%
-
-    h1
-      text-align: left
-
-  .title
-    padding-top: 1rem
-    position: relative
-    +breakpoint(medium)
-      padding-top: 200px
-
-    .logo
-      display: block
-      +breakpoint(medium)
-        float: right
-      svg
-        display: block
-        margin-left: auto
-        margin-right: auto
-  .menu
-    position: relative
-    padding-top: 1rem
-    text-align: center
-
-// ABOUT PAGE STYLES
-section#Introduction
-  position: relative
-  z-index: 1
-  margin: 0
-  padding-bottom: 75px
-  padding-top: 75px
-
-  p
-    color: #fff
-
-section#IndustrialDesign
-  position: relative
-  margin: 0
-  padding-bottom: 75px
-  padding-top: 75px
-
-  p,h2
-    +breakpoint(medium)
-      text-align: left
-
-section#FrontEndDevelopment
-  position: relative
-  margin: 0
-  padding-bottom: 75px
-  padding-top: 75px
-
-  p,h2
-    color: #fff
-    +breakpoint(medium)
-      text-align: left
-
-section#BusinessDevelopment
-  position: relative
-  margin: 0
-  padding-bottom: 75px
-  padding-top: 75px
-
-  p,h2
-    +breakpoint(medium)
-      text-align: left
-
-//PORTFOLIO HOME PAGE STYLES
-section#PortfolioHeader
-  position: relative
-  margin: 0
-  padding-bottom: 75px
-  padding-top: 75px
-
-section#ProjectThumbnails
-  position: relative
-  margin: 0
-  padding-bottom: 75px
-  padding-top: 75px
-
-  .projectthumbnail
-    background-color: #f9b
-    width: 100%
-    height: auto
-
-    p
-      text-align: left
+      transition: 0.35s
 
 // PROJECT GLOBALS
 section#ProjectIntroduction
-  margin-top: -86px
-  padding-top: 161px
-  padding-bottom: 75px
+  margin-top: 0
+  padding-top: rem-calc(110)
+  padding-bottom: rem-calc(75)
 
-  h2,p
-    color: #fff
+  +breakpoint(medium)
+    padding-top: rem-calc(125)
+
+    +breakpoint(xxlarge)
+      padding-top: rem-calc(155)
