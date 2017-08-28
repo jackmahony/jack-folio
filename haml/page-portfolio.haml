@@ -13,10 +13,12 @@
 
 %section#ProjectThumbnails
   .row.small-up-1.medium-up-3
-    {% for project in projects %}
+    {% for project in projects |slice (0,3) %}
           .column
             .projectthumbnail
-              %a.project{href: "{{project.link}}"}
+              %a.project{href: "{{project.link}}" }
+                .figcaption.hide-for-small-only
+                  View Project
                 {% if project.project_image %}
                   %img{src: "{{TimberImage(project.project_image)|resize(280, 210) }}"}
                 {% endif %}
@@ -27,8 +29,45 @@
                   %p {{project.company_name}}
                 {% endif %}
                 .foot
+
     {% endfor %}
+  .row.align-center
+    %span UI Design's
+    {% for project in projects |slice (3) %}
+          .column
+            .projectthumbnail
+              %a.project{href: "{{project.link}}" }
+                .figcaption
+                  View Project
+                {% if project.project_image %}
+                  %img{src: "{{TimberImage(project.project_image)|resize(280, 210) }}"}
+                {% endif %}
+                {% if project.project_title %}
+                  %h3 {{project.project_title}}
+                {% endif %}
+                {% if project.company_name %}
+                  %p {{project.company_name}}
+                {% endif %}
+                .foot
+
+    {% endfor %}
+%section#tempp
+    .row.align-center
+      %h2.mark UI Design
+    .row.align-center
+      %p Check out my
+      %a.two{href:"https://twitter.com/jackmahonyy",target:"_blank"} twitter!
+      %p Feed. I'm currently involved in the dailyui challenge.
 
 {% include 'particles/footer.twig' %}
+
+
+  -# Scripts
+  %script
+  :javascript
+    $(".figcaption").hide();
+    $(".projectthumbnail").hover(function(){
+    $ (this).find(".figcaption").toggle();
+    });
 
 {% endblock %}

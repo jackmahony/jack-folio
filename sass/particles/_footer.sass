@@ -13,9 +13,9 @@ footer
     text-align: center
 
     a.two
-      padding-right: 0.25rem
+      padding-right: rem-calc(10)
 
-    svg
+    svg,embed
       vertical-align: middle
 
     span
@@ -24,3 +24,10 @@ footer
       color: #fff
       padding-left: 0.5rem
       padding-right: 0.5rem
+
+    .pipe
+      padding-left: 0.5rem
+      padding-right: 0.5rem
+      +breakpoint(medium)
+        padding-left: 2rem
+        padding-right: 2rem

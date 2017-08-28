@@ -53,7 +53,7 @@ gulp.task('watch', function() {
 	gulp.watch(paths.compiled).on('change', browserSync.reload);
 
   browserSync.init({
-      proxy: "http://localhost:8888/jackfolio/"
+      proxy: "http://localhost:8888/local_site/"
   });
 });
 
