@@ -1,13 +1,43 @@
 {% extends "base.twig" %}
 
 {% block content %}
-{% include 'particles/navigation.twig' %}
+.about-nav
+  {% include 'particles/navigation.twig' %}
 
-%section#Introduction.secondary
+%section#Header-label
   .row.align-center
+    <svg width="764px" height="161px" viewBox="0 0 764 161" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+        <title>box-top</title>
+        <desc>Created with Sketch.</desc>
+        <defs></defs>
+        <g id="Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+            <g id="About--Copy" transform="translate(-338.000000, -90.000000)" stroke-width="3" stroke="#000000">
+                <polyline id="box-top" transform="translate(720.000000, 171.500000) scale(1, -1) translate(-720.000000, -171.500000) " points="340 92 340 251 1100 251 1100 92"></polyline>
+            </g>
+        </g>
+    </svg>
     .small-12.medium-8.columns
-      {% if post.header %}
-        %p {{post.header}}
+      {% if post.header_label %}
+        %h1.mark {{post.header_label}}
+      {% endif %}
+
+%section#Header-text
+  .row.align-center
+    <svg width="764px" height="202px" viewBox="0 0 764 202" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+        <title>box-bottom</title>
+        <desc>Created with Sketch.</desc>
+        <defs></defs>
+        <g id="Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+            <g id="About--Copy" transform="translate(-338.000000, -314.000000)" stroke-width="3" stroke="#030303">
+                <polyline id="box-bottom" points="340 314 340 514 1100 514 1100 314"></polyline>
+            </g>
+        </g>
+    </svg>
+    .small-12.medium-6.columns
+      {% if post.header_text %}
+        %p {{post.header_text}}
       {% endif %}
 
 %section#IndustrialDesign
@@ -22,24 +52,24 @@
         %p {{post.industrial_designer }}
       {% endif %}
 
-%section#FrontEndDevelopment.secondary
+%section#FrontEndDevelopment.third
   .row.align-middle
-    .small-12.medium-5.medium-offset-1.columns.wow.fadeInLeft
+    .small-12.medium-5.medium-offset-1.columns.wow.fadeInUp
       {% if post.front_end_development %}
         %p {{post.front_end_development }}
       {% endif %}
-    .small-12.medium-5.medium-pull-1.columns.wow.fadeInRight
+    .small-12.medium-5.medium-pull-1.columns.wow.fadeInUp
       {% if post.front_end_image %}
         %img{src: "{{TimberImage(post.front_end_image)}}"}
       {% endif %}
 
 %section#BusinessDevelopment
   .row.align-middle
-    .small-12.medium-5.medium-offset-1.columns.wow.fadeInLeft
+    .small-12.medium-5.medium-offset-1.columns.wow.fadeInUp
       {% if post.business_image %}
         %img{src: "{{TimberImage(post.business_image)}}"}
       {% endif %}
-    .small-12.medium-5.medium-pull-1.columns.wow.fadeInRight
+    .small-12.medium-5.medium-pull-1.columns.wow.fadeInUp
       {% if post.business_development %}
         %p {{post.business_development  }}
       {% endif %}

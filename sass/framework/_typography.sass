@@ -22,7 +22,6 @@ ul,ol
     font-size: 20px
 
 // Header Styles
-
 h1
   color: #fff
   font-family: 'Josefin Sans', sans-serif
@@ -49,7 +48,9 @@ h1
 h2
   font-family: 'Josefin Sans', sans-serif
   text-align: left
+  font-weight: 300
   margin-top: rem-calc(10)
+  text-align: center
 
   +breakpoint(medium)
     text-align: center
@@ -74,3 +75,56 @@ h3
 
   +breakpoint(medium)
     text-align: center
+
+
+    // styles for headroom--unpinned
+
+    // Import fonts
+    @import url(https://fonts.googleapis.com/css?family=Fira+Sans:300,400|Josefin+Sans:300,400)
+
+    // Paragraph styles
+    p
+      font-size: 18px
+      font-family: 'Fira Sans', sans-serif
+      text-align: left
+      font-weight: lighter
+      line-height: 1.4
+
+      +breakpoint(medium)
+        font-size: 20px
+        text-align: left
+
+    ul,ol
+      font-size: 18px
+      font-family: 'Fira Sans', sans-serif
+      font-weight: lighter
+
+      +breakpoint(medium)
+        font-size: 20px
+
+    // H1 HOMEPAGE STYLES
+
+    // h1
+    //   color: #0a0a0a
+    //   font-family: 'Josefin Sans', sans-serif
+    //   font-weight: 400
+    //   text-align: center
+    //   margin-top: 5rem
+    //
+    //   +breakpoint(medium)
+    //     padding-left: 100px
+    //     padding-right: 100px
+    //     text-align: center
+    //     margin-top: 2rem
+    //
+    //   &.mark
+    //     position: relative
+    //     display: block
+    //     z-index: 1
+    //
+    //     &::after
+    //       content: url('../../assets/img/mark1.svg')
+    //       position: relative
+    //       display: block
+    //       margin-top: rem-calc(10)
+    //       margin-bottom: rem-calc(20)

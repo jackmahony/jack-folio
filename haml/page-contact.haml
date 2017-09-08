@@ -1,8 +1,9 @@
 {% extends "base.twig" %}
 
 {% block content %}
--# .wrapper
-{% include 'particles/navigation.twig' %}
+.contact-nav
+  {% include 'particles/navigation.twig' %}
+
 {% if post.slug == 'contact' %}
   %section#contact
     .contact-form

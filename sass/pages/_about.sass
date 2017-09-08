@@ -1,24 +1,55 @@
+.about-nav
+  nav#topnav
+    background-color: transparent
+
+    +breakpoint(medium)
+      background-color: #9F91C7
+
 // ABOUT PAGE STYLES
-section#Introduction
+section#Header-label
   position: relative
   margin: 0
-  padding-bottom: 75px
-  padding-top: rem-calc(110)
+  padding-bottom: rem-calc(25px)
+  padding-top: rem-calc(95)
+  background-color: #9F91C7
+
+  h1
+    margin-top: 3.5rem
+
+  svg
+    display: none
+
+    +breakpoint(medium)
+      display: inline-block
+      position: absolute
+      top: auto
+      margin-top: 0
+      max-width: 95%
 
   +breakpoint(medium)
-    padding-top: rem-calc(125)
+    padding-top: 6.8rem
 
     +breakpoint(xxlarge)
       padding-top: rem-calc(155)
-  p
-    color: #fff
 
+section#Header-text
+  svg
+    display: none
+
+    +breakpoint(medium)
+      display: inline-block
+      position: absolute
+      max-width: 95%
+      bottom: 0
 
 section#IndustrialDesign
   position: relative
   margin: 0
   padding-bottom: 75px
-  padding-top: 75px
+  padding-top: 0
+
+  +breakpoint(medium)
+    padding-top: 75px
 
   p,h2
     +breakpoint(medium)
@@ -30,10 +61,8 @@ section#FrontEndDevelopment
   padding-bottom: 75px
   padding-top: 75px
 
-  p,h2
-    color: #fff
-    +breakpoint(medium)
-      text-align: left
+  +breakpoint(medium)
+    text-align: left
 
 section#BusinessDevelopment
   position: relative

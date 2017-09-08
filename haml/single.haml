@@ -31,16 +31,16 @@
     {% elseif item.acf_fc_layout == 'text_left' %}
       %section#Text-left
         .row.align-middle
-          .small-12.medium-6.columns.wow.fadeInLeft
+          .small-12.medium-6.columns.wow.fadeInUp
             %p {{item.text_left}}
-          .small-12.medium-6.columns.wow.fadeInRight
+          .small-12.medium-6.columns.wow.fadeInUp
             %img{src:"{{TimberImage(item.image).src}}"}
     {% elseif item.acf_fc_layout == 'text_right' %}
       %section#Text-right
         .row.align-middle
-          .small-12.medium-6.columns.wow.fadeInLeft
+          .small-12.medium-6.columns.wow.fadeInUp
             %img{src:"{{TimberImage(item.image).src}}"}
-          .small-12.medium-6.columns.wow.fadeInRight
+          .small-12.medium-6.columns.wow.fadeInUp
             %p {{item.text_right}}
     {% elseif item.acf_fc_layout == 'text_white' %}
       %section#Text
@@ -50,7 +50,7 @@
     {% elseif item.acf_fc_layout == 'col_image' %}
       %section#ColImage.third
         .row.align-center
-          .small-10.columns.wow.fadeInUp
+          .small-12.columns.wow.fadeInUp
             %img{src:"{{TimberImage(item.image).src}}"}
     {% endif %}
 {% endfor %}
